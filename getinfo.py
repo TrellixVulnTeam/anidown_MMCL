@@ -38,8 +38,11 @@ def get_ani_name():
     aniname = str(input("Name of the Anime"))
 
 def get_last_link():
-    link_json = {}
-    with open("cache.json", 'r') as f:
-        link_json = json.load(f)
-    length = list(link_json)[-1]
-    return link_json[length]
+    try:
+        link_json = {}
+        with open("cache.json", 'r') as f:
+            link_json = json.load(f)
+        length = list(link_json)[-1]
+        return link_json[length]
+    except:
+        return "0"
