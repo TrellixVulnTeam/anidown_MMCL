@@ -1,4 +1,3 @@
-from http.server import executable
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
@@ -6,16 +5,10 @@ import getinfo
 import json
 import os
 import selenium
-import pyperclip as pc
-import argparse
 
 
 
 #get arguments
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    'integers', metavar='int', nargs='+', type=int,
-    help='an integer to be summed')
 
 os.system("cd /home/pcadmin/Programme/anicloud")
 
