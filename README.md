@@ -9,7 +9,7 @@ download the installer from the releases tab and execute it
 run main-firefox.py,
 
 requirements:
-python 3.*
-selenium from pip
+  python 3.* - 
+  selenium from pip
 
 
