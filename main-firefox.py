@@ -17,17 +17,27 @@ def wait():
     sleep for 2 seconds (made by tinolm)
     """
     sleep(2)
-
-print(getinfo.get_last_link())
+try:
+    print(getinfo.get_last_link())
+except:
+    print(" ")
 
 cache = {}
-with open("cache.json", 'r') as f:
-    cache = json.load(f)
+try:
+    with open("cache.json", 'r') as f:
+        cache = json.load(f)
+except:
+    with open("cache.json", "r") as f:
+        print("created cache file")
+
 
 link = getinfo.get_link()
 if link == "l":
-    link = cache[len(cache)]
-    print("last link: " + link)
+    try:
+        link = cache[len(cache)]
+        print("last link: " + link)
+    except:
+        print("failed to print last used link")
 
 
 ep = input("Episode: ")#get episode

@@ -29,10 +29,9 @@ if sos == 2:
     #print("please extract/unzip geckodriver.tar.gz")
     #extract file
     with tarfile.open("geckodriver.tar.gz") as sas:
-        sas.printdir()
         sas.extractall()
 
-download("adbp.xpi", "https://addons.mozilla.org/firefox/downloads/file/3956140/adblock_plus-3.14.xpi")
+download("adbp.xpi", "https://addons.mozilla.org/firefox/downloads/file/3956140/adblock_plus-3.14.xpi")#download ad block plus
 
 
 
