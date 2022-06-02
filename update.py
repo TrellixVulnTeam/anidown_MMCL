@@ -43,4 +43,17 @@ if sos == 1:
 if sos == 2:
     os.system("python -m pip install -U selenium")
 
+#create some files
+with open("cache.json", "w") as f:
+    print("created cache file")
+    f.write('{"1": "https://aniworld.to/anime/stream/death-note/staffel-1/episode-1"}')
+with open("eps.json", "w") as f:
+    f.write('{"1": "https://aniworld.to/anime/stream/death-note/staffel-1/episode-1"}')
+    print("created eps file")
+
+
+
+
+
+
 print("installer finished, exiting....")

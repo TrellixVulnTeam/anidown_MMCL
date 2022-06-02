@@ -17,6 +17,7 @@ def wait():
     sleep for 2 seconds (made by tinolm)
     """
     sleep(2)
+
 try:
     print(getinfo.get_last_link())
 except:
@@ -186,7 +187,7 @@ while True:
     except:
         if done == False:
             done == True
-            os.system("zsh -c 'java -jar ~/Programme/fertige\ Programme/JDOWNLOADER\ VIDS/JDOWNLOADERYAAAY/JDownloader.jar $(cat eps.json)' &")
+            #os.system("zsh -c 'java -jar ~/Programme/fertige\ Programme/JDOWNLOADER\ VIDS/JDOWNLOADERYAAAY/JDownloader.jar $(cat eps.json)' &")
             exit()
             
         else:
