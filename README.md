@@ -1,7 +1,7 @@
 # Anidown
 
 Link grabber for [aniworld.to](aniworld.to).
-uses Selenium for python to grab links that can then by downloaded with origramms like [jdownloader](https://jdownloader.org)
+uses Selenium for python to grab links that can then by downloaded with programms like [jdownloader](https://jdownloader.org)
 
 (not working yet)
 
