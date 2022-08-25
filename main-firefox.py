@@ -1,11 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium .webdriver.common.by import By
 from time import sleep
 import getinfo
 import json
 import os
 import selenium
-
+from selenium.webdriver.chrome.service import Service
 
 
 #get arguments
@@ -50,10 +51,11 @@ else:
 
 
 chrome_options = webdriver.FirefoxOptions()
-fp = webdriver.FirefoxProfile()
-extension_path = '/home/pcadmin/Programme/anicloud/adbp.xpi'
+extension_path = './adbp.xpi'
 print("loaded extension")
-driver = webdriver.Firefox(executable_path="./geckodriver")
+
+s = Service("./geckodriver")
+driver = webdriver.Firefox(service=s)
 driver.install_addon(extension_path, temporary=True)
 
 cache = {}
@@ -72,7 +74,7 @@ def getit(target):
 
     #get the right hoster
     try:
-        dood = driver.find_element_by_xpath('//*[@id="wrapper"]/div[2]/div[2]/div[3]/div[5]/ul/li[3]/div/a/div')
+        dood = driver.find_element(by="Vido Öffnen")
         #streamtape = driver.find_element_by_xpath('//*[@id="wrapper"]/div[2]/div[2]/div[3]/div[5]/ul/li[2]/div/a/div')#old
         #streamtape = driver.find_element_by_xpath('/html/body/div/div[2]/div[2]/div[3]/div[5]/ul/li[1]/div/a/div')#new
         dood.click()#Click Hoster button streamtape
@@ -82,29 +84,6 @@ def getit(target):
 
     sleep(3)#wait for everything to be loaded
     
-    """ only for streamtape
-    #play = driver.find_element_by_xpath('//*[@id="wrapper"]/div[2]/div[2]/div[3]/div[5]/div[2]/div[1]/iframe')#find the player iframe using xpath
-    try:
-        play = driver.find_element_by_xpath('/html/body/div/div[2]/div[2]/div[3]/div[5]/ul/li[6]/div/a/div')
-    except selenium.common.exceptions.UnexpectedAlertPresentException as e:
-        play = driver.find_element_by_xpath('/html/body/div/div[2]/div[2]/div[3]/div[5]/ul/li[6]/div/a/div')
-        print(e)
-    #everything else was to hard to get
-    
-    #try to detect a captcha
-    
-    print("\n")
-    print("clicking player")
-    print("\n")
-    try:
-        play.click()#get faked on purpose
-        
-    except:
-        try:
-            play.click()
-        except:
-            pass
-    """
     try:
         videpframe = driver.find_element_by_xpath('//*[@id="wrapper"]/div[2]/div[2]/div[3]/div[5]/div[2]/div[1]/iframe').get_attribute('src')#
     except Exception as e:
